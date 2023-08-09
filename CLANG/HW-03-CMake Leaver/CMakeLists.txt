@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.12.0)
+set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
+SET (CMAKE_CXX_COMPILER "/usr/bin/clang++" CACHE STRING "C++ compiler" FORCE)
+project(dynamic_leaver)
+add_library(LeaverLib SHARED Leaver.h Leaver.cpp)
+add_executable(LeaverClientExe Leaver_Client.cpp)
+target_link_libraries(LeaverClientExe LeaverLib)
